@@ -1,0 +1,14 @@
+.panel.panel-default
+  .panel-heading Nuova anagrafica
+  .panel-body
+    form.form-horizontal(name="anagraficaForm", ng-submit='saveActor()', role='form', novalidate)
+      ng-include(src="'/partials/registry/form.html'")
+.panel.panel-default
+  .panel-heading Lista anagrafica
+    .checkbox
+      label
+        input(type='checkbox', ng-model="showList")
+        | mostra lista
+
+  .panel-body
+    ng-include(src="showView()")

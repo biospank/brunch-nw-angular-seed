@@ -1,0 +1,2 @@
+ol
+  li(ng-repeat="actor in actors | filter: {removed: false}", ng-click="setSelected(actor)", ng-show="!actor.removed") {{actor._id}} - {{actor.cognome}} {{actor.nome}}

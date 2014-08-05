@@ -1,0 +1,32 @@
+ng-form(name="anagraficaForm")
+  .form-group(ng-class="getCssClasses(anagraficaForm.cognome)")
+    label.col-sm-2.control-label(for='cognome') Cognome
+    .col-sm-5
+      input.form-control(id="cognome", name="cognome", type='text', placeholder='Cognome', ng-model="anagrafica.cognome", ng-minlength="3", ng-pattern="/^[a-zA-Z]+$/", autofocus-on-pristine, required)
+    .col-sm-5
+      div(ng-show="showError(anagraficaForm.cognome, 'required')")
+        | Il campo è obbligatorio
+      div(ng-show="showError(anagraficaForm.cognome, 'minlength')")
+        | Il campo è troppo corto
+      div(ng-show="showError(anagraficaForm.cognome, 'pattern')")
+        | Il campo contiene numeri
+  .form-group(ng-class="getCssClasses(anagraficaForm.nome)")
+    label.col-sm-2.control-label(for='nome') Nome
+    .col-sm-5
+      input.form-control(name="nome", type='text', placeholder='Nome', ng-model="anagrafica.nome", ng-minlength="3", required)
+    .col-sm-5
+      div(ng-show="showError(anagraficaForm.nome, 'required')")
+        | Il campo è obbligatorio
+      div(ng-show="showError(anagraficaForm.nome, 'minlength')")
+        | Il campo è troppo corto
+      div(ng-show="showError(anagraficaForm.nome, 'pattern')")
+        | Il campo contiene numeri
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      button.btn.btn-default(type='submit', ng-disabled="!canSave()") Salva
+      button.btn.btn-default(type='button', ng-show="canDelete()", ng-click="deleteActor()") Elimina
+      button.btn.btn-default(type='button', ng-show="canDelete()", ng-click="newActor()") Nuovo
+p
+  {{ anagrafica }}
+p
+  {{ actors }}

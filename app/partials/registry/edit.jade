@@ -1,0 +1,9 @@
+.panel.panel-default
+  .panel-heding Modifica anagrafica
+  .panel-body
+    form.form-horizontal(name="anagraficaForm", ng-submit='updateActor()', role='form', novalidate)
+      ng-include(src="'/partials/registry/form.html'")
+.panel.panel-default
+  .panel-heading Lista anagrafica
+  .panel-body
+    ng-include(src="'/partials/registry/list.html'")
