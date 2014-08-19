@@ -1,20 +1,21 @@
 // Karma configuration
+// Generated on Fri Aug 08 2014 13:02:47 GMT+0200 (CEST)
 
-module.exports = function(karma) {
-  karma.configure({
+module.exports = function(config) {
+  config.set({
 
-    // base path, that will be used to resolve files and exclude
-    basePath: '../',
+    // base path that will be used to resolve all patterns (eg. files, exclude)
+    basePath: '..',
 
 
     // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
     files: [
-
-      // Program files
+    // Program files
       '_public/js/vendor.js',
       '_public/js/app.js',
 
@@ -22,8 +23,8 @@ module.exports = function(karma) {
 
       // Load mocks directly from bower
       'bower_components/angular-mocks/angular-mocks.js',
-
-      'test/unit/**/*.spec.*'
+      
+      'test/unit/**/*.js'
     ],
 
 
@@ -32,8 +33,15 @@ module.exports = function(karma) {
     ],
 
 
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    preprocessors: {
+    },
+
+
     // test results reporter to use
-    // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+    // possible values: 'dots', 'progress'
+    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress'],
 
 
@@ -41,48 +49,26 @@ module.exports = function(karma) {
     port: 9876,
 
 
-    // cli runner port
-    runnerPort: 9100,
-
-
     // enable / disable colors in the output (reporters and logs)
     colors: true,
 
 
     // level of logging
-    // possible values: karma.LOG_DISABLE || karma.LOG_ERROR || karma.LOG_WARN || karma.LOG_INFO || karma.LOG_DEBUG
-    logLevel: karma.LOG_INFO,
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    logLevel: config.LOG_INFO,
 
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
 
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera
-    // - Safari (only Mac)
-    // - PhantomJS
-    // - IE (only Windows)
+    // start these browsers
+    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
 
 
-    // If browser does not capture in given timeout [ms], kill it
-    captureTimeout: 60000,
-
-
-    // Plugins to load
-    plugins: [
-      'karma-jasmine',
-      'karma-coffee-preprocessor',
-      'karma-chrome-launcher'
-    ],
-
-
     // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
+    // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
   });
 };

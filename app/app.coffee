@@ -20,10 +20,10 @@ angular.module('app', [
   $routeProvider
 
     .when '/todo',
-      templateUrl: '/partials/todo.html'
+      templateUrl: 'partials/todo.html'
       controller: 'TodoCtrl'
     .when '/registry/new',
-      templateUrl: '/partials/registry/new.html'
+      templateUrl: 'partials/registry/new.html'
       controller: 'RegistryCtrl'
       resolve:
         actors: (store) ->
@@ -35,8 +35,8 @@ angular.module('app', [
     # .when '/registry/edit/:regid',
     #   templateUrl: '/partials/registry/edit.html'
     #   controller: 'RegistryCtrl'
-    .when('/view1',      {templateUrl: '/partials/partial1.html'})
-    .when('/view2',      {templateUrl: '/partials/partial2.html'})
+    .when('/view1',      {templateUrl: 'partials/partial1.html'})
+    .when('/view2',      {templateUrl: 'partials/partial2.html'})
 
     # Catch all
     .otherwise({redirectTo: '/todo'})
